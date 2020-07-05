@@ -64,10 +64,3 @@ tr:nth-child(even) {
 .clear-data:hover {
   cursor: pointer;
 }
-
-.delete {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-}
