@@ -6,11 +6,10 @@ const FILES_TO_CACHE = [
     '/styles.css',
     '/icons/icon-192x192.png',
     '/icons/icon-512x512.png',
-   
   ];
   
-  const CACHE_NAME = "static-cache-v2";
-  const DATA_CACHE_NAME = "data-cache-v1";
+  const CACHE_NAME = "static-cache-v2"; // saves html, css, js, images
+  const DATA_CACHE_NAME = "data-cache-v1"; // saves json and data from api requests 
   
   // install
   self.addEventListener("install", function(evt) {
@@ -44,7 +43,7 @@ const FILES_TO_CACHE = [
   
   // fetch
   self.addEventListener("fetch", function(evt) {
-    if (evt.request.url.includes("/api/")) {
+    if (evt.request.url.includes("/api/")) { // api returns json 
       evt.respondWith(
         caches.open(DATA_CACHE_NAME).then(cache => {
           return fetch(evt.request)
