@@ -14,12 +14,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://workoutapp1:workoutapp1@ds053449.mlab.com:53449/heroku_2rnzzg6v", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget"
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
